@@ -7,14 +7,16 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
     }
 }
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 group = "io.whereat"
-version = "0.1-SNAPSHOT"
+version = "0.1-TEST"
 
 repositories {
     jcenter()
@@ -70,7 +72,7 @@ install {
                 groupId 'io.whereat'
                 artifactId 'lostlocationprovider'
 
-                name "LOST Location Provider"
+                name "React-Native-LOSTLocationProvider"
                 description "LOST Location Provider React Native library"
 
                 licenses {
@@ -87,5 +89,23 @@ install {
                 }
             }
         }
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "LOSTLocationProvider"
+        websiteUrl = 'https://github.com/whereat/React-Native-LOSTLocationProvider'
+        vcsUrl = 'https://github.com/whereat/React-Native-LOSTLocationProvider.git'
+        licenses = ["GPL-3.0"]
+        publish = true
     }
 }
