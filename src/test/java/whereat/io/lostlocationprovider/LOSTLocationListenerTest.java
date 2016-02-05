@@ -34,6 +34,7 @@ public class LOSTLocationListenerTest {
     public void setUp() {
         context = mock(ReactContext.class);
         lostLocationListener = new LOSTLocationListener(context);
+
         location = new Location(PROVIDER);
         location.setLatitude(LATITUDE);
         location.setLongitude(LONGITUDE);
