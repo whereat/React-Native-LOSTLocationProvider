@@ -27,7 +27,7 @@ public class LOSTLocationModule extends ReactContextBaseJavaModule {
 
     public LOSTLocationModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        locationListener = new LOSTLocationListener(this.getReactApplicationContext());
+        locationListener = new LOSTLocationListener(this.getReactApplicationContext(), new ReactNativeFactory());
 
         lostApiClient = new LostApiClient.Builder(this.getReactApplicationContext()).build();
         lostApiClient.connect();

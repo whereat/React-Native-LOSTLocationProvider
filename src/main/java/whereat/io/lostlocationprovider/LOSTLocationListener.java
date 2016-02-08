@@ -5,21 +5,22 @@ import android.support.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.mapzen.android.lost.api.LocationListener;
 
 public class LOSTLocationListener implements LocationListener {
 
     private ReactContext reactContext;
+    private ReactNativeFactory reactNativeFactory;
 
-    public LOSTLocationListener(ReactContext reactContext) {
+    public LOSTLocationListener(ReactContext reactContext, ReactNativeFactory reactNativeFactory) {
         this.reactContext = reactContext;
+        this.reactNativeFactory = reactNativeFactory;
     }
 
     @Override
     public void onLocationChanged(final Location location) {
-        WritableMap params = new WritableNativeMap();
+        WritableMap params = reactNativeFactory.createMap();
 
         params.putDouble("longitude", location.getLongitude());
         params.putDouble("latitude", location.getLatitude());
