@@ -101,11 +101,15 @@ bintray {
 
     configurations = ['archives']
     pkg {
-        repo = "maven"
+        repo = "libraries"
         name = "LOSTLocationProvider"
+        userOrg = "whereat"
         websiteUrl = 'https://github.com/whereat/React-Native-LOSTLocationProvider'
         vcsUrl = 'https://github.com/whereat/React-Native-LOSTLocationProvider.git'
         licenses = ["GPL-3.0"]
         publish = true
+        version {
+
+        }
     }
 }
