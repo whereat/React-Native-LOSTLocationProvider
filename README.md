@@ -2,7 +2,9 @@
 A simple React Native Android module that wraps Mapzen's LOST [(Location Open Source Tracker)](https://github.com/mapzen/LOST) as an alternative to the standard React Native MapView component.
 
 ##Installation
-
+    repositories {
+        jcenter()
+    }
     dependencies {
       ...
       compile 'io.whereat.lostlocationprovider:0.+'
