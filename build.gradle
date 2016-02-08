@@ -15,8 +15,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-group = "io.whereat"
-version = "0.1-TEST"
+group = "io.whereat.lib"
+version = "0.0.1"
 
 repositories {
     jcenter()
@@ -69,7 +69,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                groupId 'io.whereat'
+                groupId 'io.whereat.lib'
                 artifactId 'lostlocationprovider'
 
                 name "React-Native-LOSTLocationProvider"
