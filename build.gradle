@@ -108,8 +108,5 @@ bintray {
         vcsUrl = 'https://github.com/whereat/React-Native-LOSTLocationProvider.git'
         licenses = ["GPL-3.0"]
         publish = true
-        version {
-
-        }
     }
 }
