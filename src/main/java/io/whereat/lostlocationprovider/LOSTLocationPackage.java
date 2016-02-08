@@ -1,4 +1,4 @@
-package whereat.io.lostlocationprovider;
+package io.whereat.lostlocationprovider;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

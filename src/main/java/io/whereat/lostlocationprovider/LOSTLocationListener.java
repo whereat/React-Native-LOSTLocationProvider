@@ -1,4 +1,4 @@
-package whereat.io.lostlocationprovider;
+package io.whereat.lostlocationprovider;
 
 import android.location.Location;
 import android.support.annotation.Nullable;

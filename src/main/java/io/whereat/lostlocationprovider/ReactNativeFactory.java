@@ -1,4 +1,4 @@
-package whereat.io.lostlocationprovider;
+package io.whereat.lostlocationprovider;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableMap;
