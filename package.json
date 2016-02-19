@@ -1,12 +1,12 @@
 {
-  "name": "lostlocationprovider",
-  "version": "0.0.3",
-  "description": "A simple React Native Android module that wraps Mapzen's LOST [(Location Open Source Tracker)](https://github.com/mapzen/LOST) as an alternative to the standard React Native MapView component.",
+  "name": "react-native-lostlocationprovider",
+  "version": "0.0.4",
+  "description": "A simple React Native Android module that wraps Mapzen's LOST [(Location Open Source Tracker)](https://github.com/mapzen/LOST) as an alternative to Google's FusedLocationProviderAPI.",
   "repository": {
     "type": "git",
     "url": "https://github.com/whereat/React-Native-LOSTLocationProvider.git"
   },
-  "keywords": [],
+  "keywords": ["react-native", "android", "geolocation", "location", "open-source"],
   "author": "Where@ (https://whereat.io)",
   "license": "GPL-3.0",
   "bugs": {

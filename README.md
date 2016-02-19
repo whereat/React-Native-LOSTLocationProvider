@@ -1,34 +1,55 @@
 #React-Native-LOSTLocationProvider
-A simple React Native Android module that wraps Mapzen's LOST (https://github.com/mapzen/LOST) as an alternative to the standard React Native MapView component.
+A simple React Native Android module that wraps Mapzen's LOST (https://github.com/mapzen/LOST) as an alternative to Google's FusedLocationProviderAPI.
 
-*Current Version: 0.0.3*
+*Current Version: 0.0.4*
 
 ##Installation (Gradle)
-    repositories {
-        jcenter()
-    }
-    dependencies {
-      ...
-      compile 'io.whereat.lib:lostlocationprovider:0.0.+'
-    }
-####Register Module (MainActivity.java)
+- Install module
 
-    import io.whereat.LOSTLocationProvider.*; 
+`npm i --save react-native-lostlocationprovider`
 
-    public class MainActivity extends ReactActivity {
-      ...
-      @Override
-      protected List<ReactPackage> getPackages() {
-        return Arrays.asList(
-          ...,
-          new LOSTLocationPackage());
-        }
-      }
-      ...
+- `android/settings.gradle`
+
+```
+...
+include :react-native-lostlocationprovider
+project(':react-native-lostlocationprovider').projectDir = new File(settingsDir, '../node_modules/react-native-lostlocationprovider')
+```
+    
+- `android/app/build.gradle`
+
+```
+dependencies {
+  ...
+  compile project(':react-native-lostlocationprovider')
+}
+```    
+
+- Register module
+
+```
+import io.whereat.lostlocationprovider.LOSTLocationPackage;
+public class MainActivity extends ReactActivity {
+  ...
+  @Override
+  protected List<ReactPackage> getPackages() {
+    return Arrays.asList(
+      ...,
+      new LOSTLocationPackage());
     }
-####Import into React Native
-    import {NativeModules} from 'react-native';
-    const location = NativeModules.LOSTLocationProvider;
+
+  }
+  ...
+}
+```
+    
+- Import into React Native
+
+```
+import {NativeModules} from 'react-native';
+const location = NativeModules.LOSTLocationProvider;
+```   
+
 ##Usage
 ####Constants (Mapped from LOST LocationRequest Constants)
   - BALANCED_POWER_ACCURACY
